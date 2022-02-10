@@ -1,0 +1,928 @@
+{
+    "navigationBar": {
+        "backgroundColor": {
+            "light": "#FFFFFF",
+            "dark": "#121212"
+        },
+        "feedTitleFont": {
+            "fontFamily": "SF Pro Display",
+            "fontSize": 34,
+            "fontWeight": "bold",
+            "fontColor": {
+                "light": "#000000",
+                "dark": "#FFFFFF"
+            },
+        },
+        "feedNavigationBarIconColor": {
+            "light": "#007AFF",
+            "dark": "#8DD0FF"
+        }
+    },
+    "inAppWebView": {
+        "preferredBarTintColor": {
+            "light": "#5fc9f8",
+            "dark": "#fecb2e"
+        },
+        "preferredControlTintColor": {
+            "light": "#fc3158",
+            "dark": "#147efb"
+        }
+    },
+    "contentCategoryFilter": {
+        "categoryBackgroundColor": {
+            "light": "#FFFFFF",
+            "dark": "#121212"
+        },
+        "horizontalSpaceBetweenCategoryLabels": 0.0,
+        "separatorBetweenSettingsAndCategory": {
+            "color": {
+                "light": "#000000",
+                "dark": "#FFFFFF"
+            }
+        },
+        "categorySelectedTextFont": {
+            "fontFamily": "SF Pro Text",
+            "fontSize": 16.0,
+            "fontWeight": "bold",
+            "fontColor": {
+                "light": "#B9F556",
+                "dark": "#DD72FA"
+            },
+            "lineSpacing": 3.0
+        },
+        "categoryUnselectedTextFont": {
+            "fontFamily": "SF Pro Text",
+            "fontSize": 16.0,
+            "fontWeight": "regular",
+            "fontColor": {
+                "light": "#000000",
+                "dark": "#FFFFFF"
+            },
+            "lineSpacing": 3.0
+        },
+        "categoryUnselected": {
+            "backgroundColor": {
+                "light": "#007AFF",
+                "dark": "#8DD0FF"
+            },
+            "borderColor": {
+                "light": "#007AFF",
+                "dark": "#8DD0FF"
+            },
+            "borderRadius": 16.5,
+            "borderWidth": 1.0
+        },
+        "categorySelected": {
+            "backgroundColor": {
+                "light": "#007AFF",
+                "dark": "#8DD0FF"
+            },
+            "borderColor": {
+                "light": "#007AFF",
+                "dark": "#8DD0FF"
+            },
+            "borderRadius": 16.5,
+            "borderWidth": 1.0
+        }
+    },
+    "dynamicContentFeed": {
+        "backgroundColor": {
+            "light": "#FFFFFF",
+            "dark": "#121212"
+        },
+       "errorStateImageColor": {
+             "light": "#147efb",
+             "dark": "#fc3158"
+        },
+        "emptyStateImageColor": {
+             "light": "#147efb",
+             "dark": "#fc3158"
+        },
+        "loadingSpinnerContentFeedColor": {
+             "light": "#76CF8D",
+             "dark": "#fecb2e"
+        },
+        "loadingSpinnerPullToRefreshColor": {
+              "light": "#fc3158",
+              "dark": "#5fc9f8"
+        },
+        "verticalSpaceBetweenCards": 24.0,
+        "errorEmptyLoadingStateMessageTitleFont": {
+            "fontFamily": "AvenirNext",
+            "fontSize": 20,
+            "fontWeight": "bolditalic",
+            "fontColor": {
+                "light": "#fc3158",
+                "dark": "#fc3158"
+            },
+            "lineSpacing": 5.0
+        },
+        "errorEmptyLoadingStateMessageDescriptionFont": {
+            "fontFamily": "SongtiSC",
+            "fontSize": 15.0,
+            "fontWeight": "bold",
+            "fontColor": {
+                "light": "#53d769",
+                "dark": "#53d769"
+            },
+            "lineSpacing": 5.0
+        },
+        "errorEmptyStateButton": {
+            "buttonTextFont": {
+                "fontFamily": "SF Pro Text",
+                "fontSize": 12.0,
+                "fontWeight": "regular",
+                "fontColor": {
+                    "light": "#7fa165",
+                    "dark": "#7fa165"
+                },
+                "lineSpacing": 5.0
+            },
+            "buttonBackgroundColor": {
+                "light": "#d4c490",
+                "dark": "#d4c490"
+            },
+            "buttonBorderColor": {
+                "light": "#007AFF",
+                "dark": "#8DD0FF"
+            },
+            "buttonBorderRadius": 18.0,
+            "buttonBorderWidth": 1.0,
+            "buttonBorderShadow": {
+                "color": {
+                    "light": "#000000",
+                    "dark": "#FFFFFF"
+                },
+                "offset": {
+                    "width": 0,
+                    "height": 40.0
+                },
+                "opacity": 1.0,
+                "radius": 18.0
+            }
+        }
+    },
+    "contentCards": {
+            "backgroundColor": {
+                "light": "#83F36D",
+                "dark": "#fecb2e"
+            },
+            "marginSide": 40.0,
+            "borderColor": {
+                "light": "#F36D7F",
+                "dark": "#F36D7F"
+            },
+            "borderRadius": 20.0,
+            "borderWidth": 10.0,
+            "shadow": {
+                "color": {
+                    "light": "#F36DB0",
+                    "dark": "#6DF3E3"
+                },
+                "offset": {
+                    "width": 10,
+                    "height": 15.0
+                },
+                "opacity": 2.0,
+                "radius": 20.0
+            },
+            "imageViewPadding": {
+                "top": -20,
+                "bottom": -5,
+                "right": -20,
+                "left": -20
+            },
+            "contentHeaderPadding": {
+                "top": 0.0,
+                "bottom": 8.0,
+                "right": 16.0,
+                "left": 16.0
+            },
+            "contentTitlePadding": {
+                "top": 5.0,
+                "bottom": 16.0,
+                "right": 16.0,
+                "left": 16.0
+            },
+            "contentDescriptionPadding": {
+                "top": 5.0,
+                "bottom": 10.0,
+                "right": 16.0,
+                "left": 16.0
+            },
+            "contentHeaderFont": {
+                "fontFamily": "AvenirNext",
+                "fontSize": 18.0,
+                "fontWeight": "italic",
+                "fontColor": {
+                    "light": "#fc3158",
+                    "dark": "#53d769"
+                },
+                "lineSpacing": 10.0,
+            },
+            "contentTitleFont": {
+                "fontFamily": "AvenirNext",
+                "fontSize": 17.0,
+                "fontWeight": "italic",
+                "fontColor": {
+                    "light": "#147efb",
+                    "dark": "#147efb"
+                },
+                "lineSpacing": 10.0,
+            },
+            "contentDescriptionFont": {
+                "fontFamily": "AvenirNext",
+                "fontSize": 15.0,
+                "fontWeight": "bolditalic",
+                "fontColor": {
+                    "light": "#147efb",
+                    "dark": "#660866"
+                },
+                "lineSpacing": 6.0,
+            },
+            "truncationLinkColor": {
+                "light": "#C70039",
+                "dark": "#C70039"
+            },
+            "link": {
+                "fontFamily": "AvenirNext",
+                "fontSize": 16.0,
+                "fontWeight": "bolditalic",
+                "fontColor": {
+                    "light": "#fc3158",
+                    "dark": "#fc3158"
+                },
+                "lineSpacing": 5.0
+            },
+            "linkPadding": {
+                "top": 5.0,
+                "bottom": 12.0,
+                "left": 50.0,
+                "right": 16.0
+            },
+            "buttonStackPadding": {
+                "top": 5.0,
+                "bottom": 10.0,
+                "left": 50.0,
+                "right": 30.0
+            },
+            "primaryButton": {
+                "buttonTextFont": {
+                    "fontFamily": "AvenirNext",
+                    "fontSize": 18.0,
+                    "fontWeight": "bolditalic",
+                    "fontColor": {
+                        "light": "#fc3158",
+                        "dark": "#fc3158"
+                    },
+                    "lineSpacing": 5.0
+                },
+                "buttonBackgroundColor": {
+                    "light": "#5fc9f8",
+                    "dark": "#5fc9f8"
+                },
+                "buttonBorderColor": {
+                    "light": "#fc3158",
+                    "dark": "#fc3158"
+                },
+                "buttonBorderRadius": 25.0,
+                "buttonBorderWidth": 2.0,
+                "buttonBorderShadow": {
+                    "color": {
+                        "light": "#fc3d39",
+                        "dark": "#147efb"
+                    },
+                    "offset": {
+                        "width": 15.0,
+                        "height": 10.0
+                    },
+                    "opacity": 2.0,
+                    "radius": 30.0
+                },
+                "buttonContentPadding": {
+                    "top": 5,
+                    "left": 8,
+                    "bottom": 8,
+                    "right": 30,
+                }
+            },
+            "secondaryButton": {
+                "buttonTextFont": {
+                    "fontFamily": "Arial",
+                    "fontSize": 15.0,
+                    "fontWeight": "regular",
+                    "fontColor": {
+                        "light": "#FFDFRF",
+                        "dark": "#000000"
+                    },
+                    "lineSpacing": 5.0
+                },
+                "buttonBackgroundColor": {
+                    "light": "#FF0000",
+                    "dark": "#8DD0FF"
+                },
+                "buttonBorderColor": {
+                    "light": "#007AFF",
+                    "dark": "#54183F"
+                },
+                "buttonBorderRadius": 10.0,
+                "buttonBorderWidth": 3.0,
+                "buttonBorderShadow": {
+                    "color": {
+                        "light": "#000000",
+                        "dark": "#fc3158"
+                    },
+                    "offset": {
+                        "width": 10,
+                        "height": 30.0
+                    },
+                    "opacity": 2.0,
+                    "radius": 25.0
+                },
+                "buttonContentPadding": {
+                    "top": 5,
+                    "left": 30,
+                    "bottom": 8,
+                    "right": 16,
+                }
+            }
+        },
+    "detailedView": {
+        "backgroundColor": {
+            "light": "#FFFFFF",
+            "dark": "#121212"
+        },
+        "textBlockSidePadding": 16.0,
+        "contentHeaderFont": {
+            "fontFamily": "SF Pro Text",
+            "fontSize": 12.0,
+            "fontWeight": "semibold",
+            "fontColor": {
+                "light": "#505A72",
+                "dark": "#C4C4C4"
+            },
+            "lineSpacing": 4.0
+        },
+        "contentTitleFont": {
+            "fontFamily": "SF Pro Display",
+            "fontSize": 24.0,
+            "fontWeight": "bold",
+            "fontColor": {
+                "light": "#000000",
+                "dark": "#FFFFFF"
+            },
+            "lineSpacing": 4.0
+        },
+        "contentDescriptionFont": {
+            "fontFamily": "SF Pro Text",
+            "fontSize": 16,
+            "fontWeight": "regular",
+            "fontColor": {
+                "light": "#000000",
+                "dark": "#FFFFFF"
+            },
+            "lineSpacing": 8.0
+        },
+        "contentBodyFont": {
+            "fontFamily": "SF Pro Text",
+            "fontSize": 16.0,
+            "fontWeight": "regular",
+            "fontColor": {
+                "light": "#000000",
+                "dark": "#FFFFFF"
+            },
+            "lineSpacing": 8.0
+        }
+    },
+    "notificationsCentre": {
+        "backgroundColor": {
+            "light": "#fc3158",
+            "dark": "#53d769"
+        }
+    },
+    "settings": {
+            "backgroundColor": {
+                "light": "#aa83fc",
+                "dark": "#aa83fc"
+            },
+            "settingsMenuGroupLabelFont": {
+                "fontFamily": "Arial",
+                "fontSize": 17.0,
+                "fontWeight": "bold",
+                "fontColor": {
+                    "light": "#d95999",
+                    "dark": "#d95999"
+                },
+                "lineSpacing": 5.0
+            },
+            "settingsMenuItemFont": {
+                "fontFamily": "AvenirNext",
+                "fontSize": 13.0,
+                "fontWeight": "italic",
+                "fontColor": {
+                    "light": "#6580cf",
+                    "dark": "#6580cf"
+                },
+                "lineSpacing": 5.0
+            },
+            "settingsMenuBackgroundColor": {
+                "light": "#aad934",
+                "dark": "#aad934"
+            }
+        },
+    "optin": {
+        "backgroundColor": {
+            "light": "#FFFFFF",
+            "dark": "#121212"
+        },
+        "optInTitle": {
+            "fontFamily": "SF Pro Display",
+            "fontSize": 28.0,
+            "fontWeight": "bold",
+            "fontColor": {
+                "light": "#000000",
+                "dark": "#FFFFFF"
+            },
+            "lineSpacing": 6.0
+        },
+        "optInBody": {
+            "fontFamily": "SF Pro Text",
+            "fontSize": 17.0,
+            "fontWeight": "regular",
+            "fontColor": {
+                "light": "#000000",
+                "dark": "#FFFFFF"
+            },
+            "lineSpacing": 5.0
+        },
+        "primaryButton": {
+            "buttonText": {
+                "fontFamily": "SF Pro Text",
+                "fontSize": 15.0,
+                "fontWeight": "regular",
+                "fontColor:": {
+                    "light": "#FFFFFF",
+                    "dark": "#000000"
+                },
+                "lineSpacing": 5.0
+            },
+            "buttonBackground": {
+                "light": "#007AFF",
+                "dark": "#8DD0FF"
+            },
+            "buttonBorder": {
+                "light": "#007AFF",
+                "dark": "#8DD0FF"
+            },
+            "buttonBorderRadius": 18.0,
+            "buttonBorderShadow": {
+                "color": {
+                    "light": "#000000",
+                    "dark": "#FFFFFF"
+                },
+                "offset": {
+                    "width": 0,
+                    "height": 40.0
+                },
+                "opacity": 1.0,
+                "radius": 18.0
+            }
+        },
+        "optInDisclaimer": {
+            "fontFamily": "SF Pro Text",
+            "fontSize": 11.0,
+            "fontWeight": "regular",
+            "fontColor": {
+                "light": "#000000",
+                "dark": "#FFFFFF"
+            },
+            "lineSpacing": 2.0
+        },
+        "linkTextColor": {
+            "light": "#000000",
+            "dark": "#FFFFFF"
+        }
+            },
+            "guidedOptIn": {
+                    "navigationBackgroundColor": {
+                                "light": "#5fc9f8",
+                                "dark": "#8e8e93"
+                            },
+                            "navigationTitleFont": {
+                                "fontFamily": ".AppleSystemUIFont",
+                                "fontSize": 25.0,
+                                "fontWeight": "bolditalic",
+                                "fontColor": {
+                                    "light": "#fc3d39",
+                                    "dark": "#fc3d39"
+                                },
+                                "lineSpacing": 5.0
+                            },
+                            "navigationLinkFont": {
+                                "fontFamily": "AvenirNext",
+                                "fontSize": 20.0,
+                                "fontWeight": "bolditalic",
+                                "fontColor": {
+                                    "light": "#fd9426",
+                                    "dark": "#53d769"
+                                },
+                                "lineSpacing": 5.0
+                            },
+                    "backgroundColor": {
+                        "light": "#fecb2e",
+                        "dark": "#A9A7E2"
+                    },
+                    "loadingSpinnerOptInColor": {
+                                "light": "#53d769",
+                                "dark": "#fc3158"
+                            },
+                    "conciergeBenefits": {
+                        "optInTitleFont": {
+                           "fontFamily": ".AppleSystemUIFont",
+                           "fontSize": 15.0,
+                           "fontWeight": "bolditalic",
+                           "fontColor": {
+                               "light": "#147efb",
+                               "dark": "#fc3158"
+                           },
+                           "lineSpacing": 15.0
+                        },
+                        "optInBodyFont": {
+                           "fontFamily": ".AppleSystemUIFont",
+                           "fontSize": 15.0,
+                           "fontWeight": "thinitalic",
+                           "fontColor": {
+                               "light": "#fc3158",
+                               "dark": "#147efb"
+                           },
+                           "lineSpacing": 15.0
+                        },
+                        "paginationActiveState": {
+                            "light": "#fc3158",
+                            "dark": "#fc3158"
+                        },
+                        "paginationInactiveState": {
+                            "light": "#33000000",
+                            "dark": "#33FFFFFF"
+                        },
+                        "primaryButtonEnabledState": {
+                            "buttonTextFont": {
+                                "fontFamily": "AvenirNext",
+                                "fontSize": 15.0,
+                                "fontWeight": "bolditalic",
+                                "fontColor": {
+                                    "light": "#fc3158",
+                                    "dark": "#EA1542"
+                                },
+                                "lineSpacing": 5.0
+                            },
+                            "buttonBackgroundColor": {
+                                "light": "#5fc9f8",
+                                "dark": "#BDEA15"
+                            },
+                            "buttonBorderWidth": 2.0,
+                            "buttonBorderColor": {
+                                "light": "#007AFF",
+                                "dark": "#2215EA"
+                            },
+                            "buttonBorderRadius": 18.0,
+                            "buttonBorderShadow": {
+                                "color": {
+                                    "light": "#53d769",
+                                    "dark": "#D315EA"
+                                },
+                                "offset": {
+                                    "width": 1.0,
+                                    "Height": 0.0
+                                },
+                                "opacity": 1.0,
+                                "radius": 18.0
+                            }
+                        },
+                        "primaryButtonDisabledState": {
+                            "buttonTextFont": {
+                                "fontFamily": "AvenirNext",
+                                "fontSize": 15.0,
+                                "fontWeight": "italic",
+                                "fontColor": {
+                                    "light": "#147efb",
+                                    "dark": "#D315EA"
+                                },
+                                "lineSpacing": 5.0
+                            },
+                            "buttonBackgroundColor": {
+                                "light": "#53d769",
+                                "dark": "#62EA15"
+                            },
+                            "buttonBorderWidth": 1.0,
+                            "buttonBorderColor": {
+                                "light": "#147efb",
+                                "dark": "#5B5C5E"
+                            },
+                            "buttonBorderRadius": 18.0,
+                            "buttonBorderShadow": {
+                                "color": {
+                                    "light": "#fd9426",
+                                    "dark": "#EA5C15"
+                                },
+                                "offset": {
+                                    "width": 1.0,
+                                    "Height": 1.0
+                                },
+                                "opacity": 1.0,
+                                "radius": 10.0
+                            }
+                        },
+                        "optInCheckboxSelectedStateBackgroundColor": {
+                                        "light": "#EA15A0",
+                                        "dark": "#8DD0FF"
+                                    },
+                        "optInCheckboxUnselectedStateBackgroundColor": {
+                                        "light": "#15EA25",
+                                        "dark": "#A0159E"
+                                    },
+                        "optInDisclaimerFont": {
+                            "fontFamily": ".AppleSystemUIFont",
+                            "fontSize": 12.0,
+                            "fontWeight": "bolditalic",
+                            "fontColor": {
+                                "light": "#EA1542",
+                                "dark": "#A04415"
+                            },
+                            "lineSpacing": 10.0
+                        }
+                    },
+                    "locationServiceBenefits": {
+                                "optInTitleFont": {
+                                   "fontFamily": "AvenirNext",
+                                   "fontSize": 22.0,
+                                   "fontWeight": "bolditalic",
+                                   "fontColor": {
+                                       "light": "#A01535",
+                                       "dark": "#A01535"
+                                   },
+                                   "lineSpacing": 15.0
+                               },
+                               "optInBodyFont": {
+                                   "fontFamily": "AvenirNext",
+                                   "fontSize": 15.0,
+                                   "fontWeight": "italic",
+                                   "fontColor": {
+                                       "light": "#fc3158",
+                                       "dark": "#fc3158"
+                                   },
+                                   "lineSpacing": 5.0
+                               },
+                               "primaryButton": {
+                                    "buttonTextFont": {
+                                        "fontFamily": "AvenirNext",
+                                        "fontSize": 15,
+                                        "fontWeight": "bolditalic",
+                                        "fontColor": {
+                                            "light": "#fc3158",
+                                            "dark": "#fd9426"
+                                        },
+                                        "lineSpacing": 5.0
+                                    },
+                                    "buttonBackgroundColor": {
+                                        "light": "#147efb",
+                                        "dark": "#147efb"
+                                    },
+                                    "buttonBorderWidth": 2.0,
+                                    "buttonBorderColor": {
+                                        "light": "#fc3158",
+                                        "dark": "#fc3158"
+                                    },
+                                    "buttonBorderRadius": 18,
+                                    "buttonBorderShadow": {
+                                        "color": {
+                                            "light": "#53d769",
+                                            "dark": "#53d769"
+                                        },
+                                        "offset": {
+                                            "width": 0,
+                                            "Height": 5
+                                        },
+                                        "opacity": 1,
+                                        "radius": 18
+                                    }
+                                },
+                                "secondaryButton": {
+                                    "buttonTextFont": {
+                                        "fontFamily": "AvenirNext",
+                                        "fontSize": 15,
+                                        "fontWeight": "italic",
+                                        "fontColor": {
+                                            "light": "#fd9426",
+                                            "dark": "#fd9426"
+                                        },
+                                        "lineSpacing": 5
+                                    },
+                                    "buttonBackgroundColor": {
+                                        "light": "#8e8e93",
+                                        "dark": "#8e8e93"
+                                    },
+                                    "buttonBorderWidth": 1.0,
+                                    "buttonBorderColor": {
+                                        "light": "#D71BE0",
+                                        "dark": "#1BE0DA"
+                                    },
+                                    "buttonBorderRadius": 18,
+                                    "buttonBorderShadow": {
+                                        "color": {
+                                            "light": "#fd9426",
+                                            "dark": "#fd9426"
+                                        },
+                                        "offset": {
+                                            "width": 5,
+                                            "Height": 5
+                                        },
+                                        "opacity": 2,
+                                        "radius": 18
+                        }
+                    }
+                },
+                    "notificationBenefits": {
+                                "optInTitleFont": {
+                                   "fontFamily": "AvenirNext",
+                                   "fontSize": 22.0,
+                                   "fontWeight": "bolditalic",
+                                   "fontColor": {
+                                       "light": "#147efb",
+                                       "dark": "#147efb"
+                                   },
+                                   "lineSpacing": 6.0
+                               },
+                               "optInBodyFont": {
+                                   "fontFamily": "AvenirNext",
+                                   "fontSize": 17.0,
+                                   "fontWeight": "regular",
+                                   "fontColor": {
+                                       "light": "#fc3158",
+                                       "dark": "#fc3158"
+                                   },
+                                   "lineSpacing": 15.0
+                               },
+                               "primaryButton": {
+                                    "buttonTextFont": {
+                                        "fontFamily": ".AppleSystemUIFont",
+                                        "fontSize": 15,
+                                        "fontWeight": "bolditalic",
+                                        "fontColor": {
+                                            "light": "#fc3158",
+                                            "dark": "#fc3158"
+                                        },
+                                        "lineSpacing": 5.0
+                                    },
+                                    "buttonBackgroundColor": {
+                                        "light": "#53d769",
+                                        "dark": "#fecb2e"
+                                    },
+                                    "buttonBorderWidth": 2.0,
+                                    "buttonBorderColor": {
+                                        "light": "#147efb",
+                                        "dark": "#147efb"
+                                    },
+                                    "buttonBorderRadius": 18,
+                                    "buttonBorderShadow": {
+                                        "color": {
+                                            "light": "#fc3158",
+                                            "dark": "#fc3158"
+                                        },
+                                        "offset": {
+                                            "width": 2,
+                                            "Height": 2
+                                        },
+                                        "opacity": 2,
+                                        "radius": 10
+                                    }
+                                },
+                                "secondaryButton": {
+                                    "buttonTextFont": {
+                                        "fontFamily": "AvenirNext",
+                                        "fontSize": 20,
+                                        "fontWeight": "bold",
+                                        "fontColor": {
+                                            "light": "#007AFF",
+                                            "dark": "#1915A0"
+                                        },
+                                        "lineSpacing": 5
+                                    },
+                                    "buttonBackgroundColor": {
+                                        "light": "#53d769",
+                                        "dark": "#53d769"
+                                    },
+                                    "buttonBorderWidth": 1.0,
+                                    "buttonBorderColor": {
+                                        "light": "#fc3158",
+                                        "dark": "#fc3158"
+                                    },
+                                    "buttonBorderRadius": 18,
+                                    "buttonBorderShadow": {
+                                        "color": {
+                                            "light": "#8e8e93",
+                                            "dark": "#8e8e93"
+                                        },
+                                        "offset": {
+                                            "width": 2,
+                                            "Height": 2
+                                        },
+                                        "opacity": 2,
+                                        "radius": 18
+                        }
+                    }
+                },
+                "optOut": {
+                    "optOutTitleFont": {
+                       "fontFamily": "AvenirNext",
+                       "fontSize": 22.0,
+                       "fontWeight": "bolditalic",
+                       "fontColor": {
+                           "light": "#147efb",
+                           "dark": "#147efb"
+                       },
+                       "lineSpacing": 6.0
+                   },
+                   "optOutBodyFont": {
+                       "fontFamily": "AvenirNext",
+                       "fontSize": 17.0,
+                       "fontWeight": "italic",
+                       "fontColor": {
+                           "light": "#fc3158",
+                           "dark": "#fc3158"
+                       },
+                       "lineSpacing": 5.0
+                   },
+                   "primaryButton": {
+                        "buttonTextFont": {
+                            "fontFamily": ".AppleSystemUIFont",
+                            "fontSize": 15,
+                            "fontWeight": "bolditalic",
+                            "fontColor": {
+                                "light": "#147EFB",
+                                "dark": "#fc3158"
+                            },
+                            "lineSpacing": 5.0
+                        },
+                        "buttonBackgroundColor": {
+                            "light": "#D2CBEA",
+                            "dark": "#fecb2e"
+                        },
+                        "buttonBorderWidth": 5.0,
+                        "buttonBorderColor": {
+                            "light": "#147efb",
+                            "dark": "#147efb"
+                        },
+                        "buttonBorderRadius": 17,
+                        "buttonBorderShadow": {
+                            "color": {
+                                "light": "#fc3158",
+                                "dark": "#fc3158"
+                            },
+                            "offset": {
+                                "width": 2,
+                                "height": 2
+                            },
+                            "opacity": 0,
+                            "radius": 18
+                        }
+                    },
+                    "secondaryButton": {
+                        "buttonTextFont": {
+                            "fontFamily": "AvenirNext",
+                            "fontSize": 15,
+                            "fontWeight": "bolditalic",
+                            "fontColor": {
+                                "light": "#FC3158",
+                                "dark": "#007AFF"
+                            },
+                            "lineSpacing": 5
+                        },
+                        "buttonBackgroundColor": {
+                            "light": "#53d769",
+                            "dark": "#53d769"
+                        },
+                        "buttonBorderWidth": 1.0,
+                        "buttonBorderColor": {
+                            "light": "#D71BE0",
+                            "dark": "#147efb"
+                        },
+                        "buttonBorderRadius": 18,
+                        "buttonBorderShadow": {
+                            "color": {
+                                "light": "#fc3158",
+                                "dark": "#fc3158"
+                            },
+                            "offset": {
+                                "width": 2,
+                                "height": 2
+                            },
+                            "opacity": 2,
+                            "radius": 18
+                        }
+                    }
+                }
+            }
+        }
+
+
