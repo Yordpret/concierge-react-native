@@ -14,7 +14,7 @@ export function connect() {
 }
 
 export function configure() {
-    RNFlybitsConcierge.configureFlybits()
+    // RNFlybitsConcierge.configureFlybits()
 }
 
 export function sendBatteryContext() {

@@ -32,12 +32,6 @@ export default class App extends Component<{}> {
           })();
         
         }} />
-         <Button title='show content' styles={{ flex: 1 }} onPress={() => {
-          Platform.select({
-            android: () => FlybitsModule.flybitsShow()
-          })();
-        
-        }} />
         
         <FlybitsConcierge style={{flex:1, width: "100%"}}/>
       </SafeAreaView>
