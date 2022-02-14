@@ -22,7 +22,8 @@ def safeExtGet(prop, fallback) {
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.google.gms.google-services'  // Google Services plugin
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 repositories {
     google()
     // ref: https://www.baeldung.com/maven-local-repository
@@ -50,6 +51,7 @@ repositories {
 }
 
 buildscript {
+    ext.kotlin_version = "1.6.10"
     // The Android Gradle plugin is only required when opening the android folder stand-alone.
     // This avoids unnecessary downloads and potential conflicts when the library is included as a
     // module dependency in an application project.
@@ -74,6 +76,9 @@ buildscript {
             // the minimum React Native version supported.
 //            classpath 'com.android.tools.build:gradle:3.4.1'
             classpath 'com.google.gms:google-services:4.3.3'
+            classpath 'com.android.tools.build:gradle:7.1.0'
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+            classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
         }
     }
 }
@@ -104,10 +109,8 @@ android {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
+//    implementation 'com.flybits.android:concierge:4.0.0'
     implementation 'com.flybits.android:concierge:3.7.1'
-    //classpath 'com.google.gms:google-services:4.3.3'
-//    classpath 'com.google.gms:google-services:4.3.10'
-
 }
 
 def configureReactNativePom(def pom) {

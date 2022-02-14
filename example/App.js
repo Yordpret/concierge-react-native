@@ -22,7 +22,7 @@ export default class App extends Component<{}> {
         <Button title='Connect' styles={{ flex: 1 }} onPress={() => {
           Platform.select({
             ios: () => connect(),
-            android: () => FlybitsModule.flybitsConnect('testName', 'testLocation')
+            android: () => FlybitsModule.flybitsConnect()
           })();
         }} />
         <Button title='SendBatteryContext' styles={{ flex: 1 }} onPress={() => {
