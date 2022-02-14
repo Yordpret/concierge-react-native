@@ -5,42 +5,36 @@ import android.util.Log
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
-import com.flybits.commons.library.SharedElementsFactory.get
-import com.flybits.commons.library.api.Region
-import com.flybits.commons.library.api.idps.AnonymousIDP
 import com.flybits.commons.library.logging.VerbosityLevel
-import com.flybits.concierge.ConciergeConfiguration
-import com.flybits.concierge.FlybitsConcierge
+import com.flybits.concierge.Concierge
+import com.flybits.concierge.FlybitsConciergeConfiguration
 import com.flybits.context.ContextManager.start
 import com.flybits.context.ReservedContextPlugin
 import com.flybits.context.plugins.FlybitsContextPlugin
+import com.flybits.flybitscoreconcierge.idps.AnonymousConciergeIDP
 import com.google.firebase.iid.FirebaseInstanceId
 
 class FlybitsModule internal constructor(context: ReactApplicationContext?) :
     ReactContextBaseJavaModule(context) {
     private val context: Context = reactApplicationContext
-    private val concierge = FlybitsConcierge.with(context)
     override fun getName(): String {
         return "FlybitsModule"
     }
 
+    private val TENANT_ID = "C1A63879-DEC8-4EF0-B3D6-A89AE8E5FFEE"
+    private val GATEWAY = "https://api.mc-sg.flybits.com"
+
     @ReactMethod
     fun flybitsConnect() {
-        concierge.authenticate(AnonymousIDP())
-        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener{
+        Concierge.connect(context, AnonymousConciergeIDP())
+        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
             Log.e("flybits_debug", "FirebaseInstanceId ${it.id}")
         }
     }
 
     @ReactMethod
     fun connectToFlybits() {
-        concierge.setLoggingVerbosity(VerbosityLevel.ALL)
-        val conciergeConfiguration: ConciergeConfiguration =
-            ConciergeConfiguration.Builder("73C75DFB-3728-4062-943F-2D7FCDA19B75")
-                .setGatewayUrl(Region.CANADA.url)
-                .build()
-        concierge.initialize(conciergeConfiguration)
-        concierge.authenticate(AnonymousIDP())
+        flybitsConnect()
     }
 
     @ReactMethod
@@ -53,26 +47,19 @@ class FlybitsModule internal constructor(context: ReactApplicationContext?) :
 
     @ReactMethod
     fun sendContext() {
-        start(
-            context,
-            FlybitsContextPlugin.Builder(ReservedContextPlugin.BATTERY).build()
-        )
+        sendBattery()
     }
 
     @ReactMethod
     fun configureFlybits() {
+        Concierge.setLoggingVerbosity(VerbosityLevel.ALL)
+
+        val conciergeConfiguration = FlybitsConciergeConfiguration.Builder(context)
+            .setProjectId(TENANT_ID)
+            .setGateWayUrl(GATEWAY)
+            .build()
+
+        Concierge.configure(conciergeConfiguration, emptyList(), context)
         Log.d("flybitsConnect", "configureFlybits")
-    } //
-    //    @ReactMethod
-    //    public void flybitsShow() {
-    //        DisplayConfiguration displayConfiguration = new DisplayConfiguration(
-    //                ConciergeFragment.MenuType.MENU_TYPE_APP_BAR,
-    //                ShowMode.NEW_ACTIVITY,
-    //                true,
-    //                "This is Customizable Title",
-    //                "This is Customizable Message", true//or false
-    //        );
-    //        concierge.show(displayConfiguration);
-    //        Log.d("flybitsConnect", "flybitsShow " );
-    //    }
+    }
 }

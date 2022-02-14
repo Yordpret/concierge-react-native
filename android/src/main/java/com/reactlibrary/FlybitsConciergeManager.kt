@@ -3,25 +3,19 @@ package com.reactlibrary
 
 import android.content.Context
 import android.util.Log
-import com.facebook.react.uimanager.SimpleViewManager
-import android.widget.FrameLayout
-import com.facebook.react.uimanager.ThemedReactContext
-import com.flybits.concierge.FlybitsConcierge
-import com.flybits.commons.library.logging.VerbosityLevel
-import com.flybits.concierge.ConciergeConfiguration
-import com.flybits.concierge.ConciergeFragment
-import com.flybits.concierge.DisplayConfiguration
-import com.flybits.concierge.enums.ShowMode
-import com.flybits.commons.library.api.idps.AnonymousIDP
-import android.view.LayoutInflater
-import com.reactlibrary.R
-import android.view.ViewGroup
 import android.view.Choreographer
+import android.view.LayoutInflater
 import android.view.View
-import androidx.fragment.app.Fragment
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import androidx.fragment.app.FragmentActivity
 import com.facebook.react.common.MapBuilder
-import com.flybits.commons.library.api.Region
+import com.facebook.react.uimanager.SimpleViewManager
+import com.facebook.react.uimanager.ThemedReactContext
+import com.flybits.commons.library.logging.VerbosityLevel
+import com.flybits.concierge.*
+import com.flybits.concierge.enums.ConciergeOptions
+import com.flybits.concierge.enums.Container
 
 class FlybitsConciergeManager : SimpleViewManager<FrameLayout>() {
     //    public static final String REACT_CLASS = "FlybitsModule";
@@ -30,24 +24,25 @@ class FlybitsConciergeManager : SimpleViewManager<FrameLayout>() {
         return REACT_CLASS
     }
 
+    private val TENANT_ID = "C1A63879-DEC8-4EF0-B3D6-A89AE8E5FFEE"
+    private val GATEWAY = "https://api.mc-sg.flybits.com"
     public override fun createViewInstance(context: ThemedReactContext): FrameLayout {
-        val concierge = FlybitsConcierge.with(context)
-        concierge.setLoggingVerbosity(VerbosityLevel.ALL)
+        Concierge.setLoggingVerbosity(VerbosityLevel.ALL)
 
-        val conciergeConfiguration: ConciergeConfiguration =
-            ConciergeConfiguration.Builder("73C75DFB-3728-4062-943F-2D7FCDA19B75")
-                .setGatewayUrl(Region.CANADA.url)
-                .build()
+        val conciergeConfiguration = FlybitsConciergeConfiguration.Builder(context)
+            .setProjectId(TENANT_ID)
+            .setGateWayUrl(GATEWAY)
+            .build()
 
+        Concierge.configure(conciergeConfiguration, emptyList(), context)
 
-        concierge.initialize(conciergeConfiguration)
-        val conciergeFragment: Fragment = ConciergeFragment.newInstance(
-            DisplayConfiguration(
-                ConciergeFragment.MenuType.MENU_TYPE_APP_BAR, ShowMode.NEW_ACTIVITY,
-                true
-            )
+        val conciergeFragment = Concierge.fragment(
+            context,
+            Container.None,
+            null,
+            emptyList()
         )
-        Log.e("flybits_debug", "createViewInstance: in FlybitsConciergeManager", )
+        Log.e("flybits_debug", "createViewInstance: in FlybitsConciergeManager")
 
         val a = context.currentActivity as FragmentActivity?
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -56,7 +51,7 @@ class FlybitsConciergeManager : SimpleViewManager<FrameLayout>() {
         a!!.supportFragmentManager.beginTransaction().replace(
             R.id.concierge_fragment,
             conciergeFragment,
-            ConciergeFragment.CONCIERGE_FRAGMENT_TAG
+            ConciergeFragment.CONCIERGE_LOG_TAG
         ).commit()
         return frameLayout
     }
