@@ -26,8 +26,6 @@ class FlybitsModule internal constructor(context: ReactApplicationContext?) :
 
     @ReactMethod
     fun flybitsConnect() {
-        val sharedElements = get(context)
-        sharedElements.setUniqueDevice("testdeviceid")
         concierge.authenticate(AnonymousIDP())
         FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener{
             Log.e("flybits_debug", "FirebaseInstanceId ${it.id}")
