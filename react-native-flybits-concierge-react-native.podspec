@@ -25,6 +25,6 @@ Pod::Spec.new do |s|
 
   s.dependency "React"
   # ...
-  s.dependency "FlybitsConciergeSDK", "3.8.1"
+  s.dependency "FlybitsConcierge", "4.0"
 end
 

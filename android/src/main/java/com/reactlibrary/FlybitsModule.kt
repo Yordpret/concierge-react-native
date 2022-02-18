@@ -26,6 +26,7 @@ class FlybitsModule internal constructor(context: ReactApplicationContext?) :
 
     @ReactMethod
     fun flybitsConnect() {
+        configureFlybits() 
         Concierge.connect(context, AnonymousConciergeIDP())
         FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
             Log.e("flybits_debug", "FirebaseInstanceId ${it.id}")

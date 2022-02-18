@@ -8,7 +8,7 @@
 
 import Foundation
 import React
-import FlybitsConciergeSDK
+import FlybitsConcierge
 import FlybitsContextSDK
 import FlybitsPushSDK
 
@@ -37,8 +37,9 @@ class ConciergeViewManager: RCTViewManager {
         // life-cycle events to it. You need to ensure if this method is called multiple times that you remove
         // any existing Concierge before creating a new. This will ensure you don't leak memory.
         if let delegate = UIApplication.shared.delegate, let root = delegate.window??.rootViewController {
-
-            let fb = FlybitsConciergeManager.conciergeViewController(for: "", using: "", customPhysicalDeviceId: nil, display: [.displayMode: DisplayMode.embedded], callback: nil)
+            
+            
+            let fb = Concierge.viewController(.none, params: [], options: [.notifications, .settings])
 
             root.addChild(fb)
 
@@ -69,8 +70,8 @@ class ConciergeViewManager: RCTViewManager {
      */
     @objc
     func connectToFlybits() {
-
-        FlybitsConciergeManager.shared.connectFlybitsManager(to: "C1A63879-DEC8-4EF0-B3D6-A89AE8E5FFEE", with: AnonymousIDP(), customerId: nil, physicalDeviceId: nil) { error in
+        configureFlybits()
+        Concierge.connect(with: AnonymousConciergeIDP()){ error in
             guard error == nil else {
                 print(error)
                 return
@@ -88,23 +89,14 @@ class ConciergeViewManager: RCTViewManager {
     @objc
     func configureFlybits() {
 
-        loadCustomTheme()
-        FlybitsConciergeManager.configure()
+
+        
+        FlybitsManager.configure(configuration: FlybitsConfiguration.Builder()
+                                    .setProjectId("C1A63879-DEC8-4EF0-B3D6-A89AE8E5FFEE")
+                                    .setGateWayUrl("https://api.mc-sg.flybits.com")
+                                    .build())
+    
         FlybitsManager.enableLogging()
-        FlybitsManager.environment = FlybitsManager.Environment.other("https://api.mc-sg.flybits.com")
-    }
-
-    func loadCustomTheme(fileName: String = "ConciergeTheme", bundle: Bundle = Bundle.main) {
-        ConciergeViewManager.readThemeDataFromFile(fileName: fileName, bundle: bundle)
-        //self.customTheme = CustomTheme(defaultTheme: defaultTheme, customThemeData: customThemeData)
-    }
-
-    static func readThemeDataFromFile(fileName: String, bundle: Bundle) {
-        guard let path = bundle.path(forResource: fileName, ofType: "json") else {
-            return
-        }
-        print("Found \(path)")
-        return //URL(fileURLWithPath: path).readJsonObject()
     }
 
     /**
@@ -117,14 +109,13 @@ class ConciergeViewManager: RCTViewManager {
      ```
      */
     @objc
-    func sendContext(_ percent: Int) {
-        let batteryCtx = ContextData(pluginId: "ctx.sdk.battery", values: ["percentage": percent])
+    func sendContext() {
+        let batteryCtx = ContextData(pluginId: "ctx.sdk.battery", values: ["percentage": 10])
         ContextManager.sendContextData([batteryCtx]) { error in
             guard error == nil else {
                 print(error)
                 return
             }
-
             print("Context Upload successfully")
         }
     }
