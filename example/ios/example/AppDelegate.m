@@ -69,7 +69,6 @@ static void InitializeFlipper(UIApplication *application) {
 }
 
 -(void)application:(UIApplication*)app didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
-  [RNFlybitsConcierge setAPNsToken:deviceToken];
 }
 
 @end

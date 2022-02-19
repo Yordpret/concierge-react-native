@@ -39,7 +39,7 @@ class ConciergeViewManager: RCTViewManager {
         if let delegate = UIApplication.shared.delegate, let root = delegate.window??.rootViewController {
             
             
-            let fb = Concierge.viewController(.none, params: [], options: [.notifications, .settings])
+            let fb = Concierge.viewController(.none, params: [], options: [])
 
             root.addChild(fb)
 
@@ -60,24 +60,18 @@ class ConciergeViewManager: RCTViewManager {
       return container
     }
 
-    /**
-     Method connects to Flybits servers and fetches a Jwt token for Authentication.
-     ```
-         <Button title='Connect' styles={{ flex: 1 }} onPress={() => {
-               connect()
-          }} />
-     ```
-     */
+
     @objc
-    func connectToFlybits() {
-        configureFlybits()
-        Concierge.connect(with: AnonymousConciergeIDP()){ error in
-            guard error == nil else {
-                print(error)
-                return
-            }
-            print("Success")
-        }
+    func setToken() {
+        
+    }
+}
+
+@objc(FlybitsModule)
+class FlybitsModuleSwift: NSObject {
+
+    @objc static func requiresMainQueueSetup() -> Bool {
+        return false
     }
     /**
         This method should be called at the earilest point in your programs application.
@@ -88,14 +82,11 @@ class ConciergeViewManager: RCTViewManager {
      */
     @objc
     func configureFlybits() {
-
-
-        
         FlybitsManager.configure(configuration: FlybitsConfiguration.Builder()
                                     .setProjectId("C1A63879-DEC8-4EF0-B3D6-A89AE8E5FFEE")
                                     .setGateWayUrl("https://api.mc-sg.flybits.com")
                                     .build())
-    
+
         FlybitsManager.enableLogging()
     }
 
@@ -109,7 +100,7 @@ class ConciergeViewManager: RCTViewManager {
      ```
      */
     @objc
-    func sendContext() {
+    func sendBattery() {
         let batteryCtx = ContextData(pluginId: "ctx.sdk.battery", values: ["percentage": 10])
         ContextManager.sendContextData([batteryCtx]) { error in
             guard error == nil else {
@@ -120,18 +111,28 @@ class ConciergeViewManager: RCTViewManager {
         }
     }
 
+    /**
+     Method connects to Flybits servers and fetches a Jwt token for Authentication.
+     ```
+         <Button title='Connect' styles={{ flex: 1 }} onPress={() => {
+               connect()
+          }} />
+     ```
+     */
     @objc
-    func setToken() {
-        
+    func connectToFlybits() {
+        Concierge.connect(with: AnonymousConciergeIDP()){ error in
+            guard error == nil else {
+                print(error)
+                return
+            }
+            print("Success")
+        }
     }
-}
 
-@objc(PushHandler)
-class PushHandler: NSObject {
-    @objc
-    static func setToken(_ data: Data) {
-        PushManager.shared.configuration.apnsToken = data
-    }
+
+
+
 }
 
 

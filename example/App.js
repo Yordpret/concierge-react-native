@@ -20,20 +20,13 @@ export default class App extends Component<{}> {
     return (
       <SafeAreaView style={styles.container}>
         <Button title='Connect' styles={{ flex: 1 }} onPress={() => {
-          Platform.select({
-            ios: () => connect(),
-            android: () => FlybitsModule.flybitsConnect()
-          })();
+         connect()
         }} />
         <Button title='SendBatteryContext' styles={{ flex: 1 }} onPress={() => {
-          Platform.select({
-            ios: () =>   sendBatteryContext(),
-            android: () => FlybitsModule.sendBattery()
-          })();
-        
+              sendBatteryContext()
         }} />
         
-        <FlybitsConcierge style={{flex:1, width: "100%"}}/>
+        <FlybitsConcierge style={{ flex: 1, width: "100%" }}/>
       </SafeAreaView>
     );
   }

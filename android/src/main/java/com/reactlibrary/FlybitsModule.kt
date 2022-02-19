@@ -5,12 +5,13 @@ import android.util.Log
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
+import com.flybits.commons.library.api.results.callbacks.BasicResultCallback
+import com.flybits.commons.library.exceptions.FlybitsException
 import com.flybits.commons.library.logging.VerbosityLevel
 import com.flybits.concierge.Concierge
 import com.flybits.concierge.FlybitsConciergeConfiguration
-import com.flybits.context.ContextManager.start
-import com.flybits.context.ReservedContextPlugin
-import com.flybits.context.plugins.FlybitsContextPlugin
+import com.flybits.context.ContextManager
+import com.flybits.context.plugins.battery.BatteryData
 import com.flybits.flybitscoreconcierge.idps.AnonymousConciergeIDP
 import com.google.firebase.iid.FirebaseInstanceId
 
@@ -26,7 +27,6 @@ class FlybitsModule internal constructor(context: ReactApplicationContext?) :
 
     @ReactMethod
     fun flybitsConnect() {
-        configureFlybits() 
         Concierge.connect(context, AnonymousConciergeIDP())
         FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
             Log.e("flybits_debug", "FirebaseInstanceId ${it.id}")
@@ -40,15 +40,18 @@ class FlybitsModule internal constructor(context: ReactApplicationContext?) :
 
     @ReactMethod
     fun sendBattery() {
-        start(
-            context,
-            FlybitsContextPlugin.Builder(ReservedContextPlugin.BATTERY).build()
-        )
-    }
+//        val batteryData = BatteryData(true, 100)
+//        batteryData.updateNow(context, object : BasicResultCallback {
+//            override fun onException(exception: FlybitsException) {
+//                Log.e("flybits_debug", "NO!!!!!")
+//            }
+//
+//            override fun onSuccess() {
+//                Log.e("flybits_debug", "YES!!!")
+//            }
+//        })
 
-    @ReactMethod
-    fun sendContext() {
-        sendBattery()
+        Log.e("flybits_debug", "NO!!!!!")
     }
 
     @ReactMethod

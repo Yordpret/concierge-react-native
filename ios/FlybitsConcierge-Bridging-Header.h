@@ -8,11 +8,12 @@
 #import <NSObject+ExtraMethods.h>
 
 @interface RCT_EXTERN_MODULE(RNFlybitsConcierge, RCTViewManager)
+
+@end
+
+@interface RCT_EXTERN_MODULE(FlybitsModule, NSObject)
 RCT_EXTERN_METHOD(connectToFlybits)
 RCT_EXTERN_METHOD(configureFlybits)
-RCT_EXTERN_METHOD(sendContext)
-+(void)setAPNsToken:(NSData*)data {
-    [PushHandler setToken:data];
-}
+RCT_EXTERN_METHOD(sendBattery)
 @end
 
