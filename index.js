@@ -21,4 +21,8 @@ export function sendBatteryContext() {
     FlybitsModule.sendBattery()
 }
 
+export function logout() {
+    FlybitsModule.disconnectToFlybits()
+}
+
 export default FlybitsConcierge;

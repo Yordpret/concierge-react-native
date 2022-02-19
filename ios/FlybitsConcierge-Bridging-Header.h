@@ -15,5 +15,6 @@
 RCT_EXTERN_METHOD(connectToFlybits)
 RCT_EXTERN_METHOD(configureFlybits)
 RCT_EXTERN_METHOD(sendBattery)
+RCT_EXTERN_METHOD(disconnectToFlybits)
 @end
 

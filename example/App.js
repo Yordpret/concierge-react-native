@@ -11,7 +11,7 @@
 
 import React, { Component } from 'react';
 import { Platform, SafeAreaView, StyleSheet, Text, View, Button} from 'react-native';
-import FlybitsConcierge, { connect, sendBatteryContext } from 'react-native-flybits-concierge-react-native';
+import FlybitsConcierge, { connect, sendBatteryContext, logout } from 'react-native-flybits-concierge-react-native';
 import { NativeModules } from 'react-native';
 const { FlybitsModule } = NativeModules;
 
@@ -25,6 +25,9 @@ export default class App extends Component<{}> {
         <Button title='SendBatteryContext' styles={{ flex: 1 }} onPress={() => {
               sendBatteryContext()
         }} />
+        <Button title='Logout' styles={{ flex: 1 }} onPress={() => {
+         logout()
+        }} />   
         
         <FlybitsConcierge style={{ flex: 1, width: "100%" }}/>
       </SafeAreaView>

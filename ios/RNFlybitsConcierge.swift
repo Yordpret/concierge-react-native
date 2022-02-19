@@ -130,7 +130,16 @@ class FlybitsModuleSwift: NSObject {
         }
     }
 
-
+    @objc
+     func disconnectToFlybits() {
+         Concierge.disconnect { error in
+             guard error == nil else {
+                 print(error)
+                 return
+             }
+             print("Success")
+         }
+     }
 
 
 }
